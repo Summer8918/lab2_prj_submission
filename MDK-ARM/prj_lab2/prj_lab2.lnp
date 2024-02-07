@@ -1,0 +1,25 @@
+--cpu Cortex-M0
+"prj_lab2\startup_stm32f072xb.o"
+"prj_lab2\main.o"
+"prj_lab2\stm32f0xx_it.o"
+"prj_lab2\stm32f0xx_hal_msp.o"
+"prj_lab2\stm32f0xx_hal_tim.o"
+"prj_lab2\stm32f0xx_hal_tim_ex.o"
+"prj_lab2\stm32f0xx_hal_rcc.o"
+"prj_lab2\stm32f0xx_hal_rcc_ex.o"
+"prj_lab2\stm32f0xx_hal.o"
+"prj_lab2\stm32f0xx_hal_i2c.o"
+"prj_lab2\stm32f0xx_hal_i2c_ex.o"
+"prj_lab2\stm32f0xx_hal_gpio.o"
+"prj_lab2\stm32f0xx_hal_dma.o"
+"prj_lab2\stm32f0xx_hal_cortex.o"
+"prj_lab2\stm32f0xx_hal_pwr.o"
+"prj_lab2\stm32f0xx_hal_pwr_ex.o"
+"prj_lab2\stm32f0xx_hal_flash.o"
+"prj_lab2\stm32f0xx_hal_flash_ex.o"
+"prj_lab2\stm32f0xx_hal_exti.o"
+"prj_lab2\system_stm32f0xx.o"
+--strict --scatter "prj_lab2\prj_lab2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "prj_lab2.map" -o prj_lab2\prj_lab2.axf
