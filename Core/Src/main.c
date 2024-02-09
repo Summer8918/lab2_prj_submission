@@ -70,6 +70,17 @@ cleared by writing a 1 to the bit.
 	*/
 	GPIOC->ODR ^= (1 << 8);
 	GPIOC->ODR ^= (1 << 9);
+	volatile uint32_t cnt = 0;  // important
+	while (1) {
+	  //GPIOC->ODR = p2;
+    cnt += 1;
+		if (cnt == 1500000) {
+		   break;
+		}
+	}
+	// Toggle PC8 and PC9 after loop
+  GPIOC->ODR ^= (1 << 8);
+	GPIOC->ODR ^= (1 << 9);
 	EXTI->PR |= EXTI_PR_PR0;
 }
 
@@ -170,7 +181,7 @@ int main(void)
 	NVIC_EnableIRQ(EXTI0_1_IRQn);
 	// Set the priority for the interrupt to 1 (high-priority)
   NVIC_SetPriority(EXTI0_1_IRQn, 1);
-  NVIC_SetPriority(SysTick_IRQn, 0);
+  NVIC_SetPriority(SysTick_IRQn, 2);
 
   while (1) {
 		HAL_Delay(600); // Delay 600ms
