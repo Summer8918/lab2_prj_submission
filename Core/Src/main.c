@@ -180,7 +180,7 @@ int main(void)
 	// EXTI0_1_IRQn                = 5,      /*!< EXTI Line 0 and 1 Interrupt  
 	NVIC_EnableIRQ(EXTI0_1_IRQn);
 	// Set the priority for the interrupt to 1 (high-priority)
-  NVIC_SetPriority(EXTI0_1_IRQn, 1);
+  NVIC_SetPriority(EXTI0_1_IRQn, 3);
   NVIC_SetPriority(SysTick_IRQn, 2);
 
   while (1) {
